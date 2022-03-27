@@ -6,6 +6,7 @@ import Modal from 'react-modal'
 
 import { createServer } from 'miragejs'
 import { useState } from "react";
+import { NewTransactionModal } from "./components/NewTransactionModal";
 
 createServer({
   routes() {
@@ -44,12 +45,10 @@ export function App() {
     <>
      <Header onOpenNewTransactionModal={handleOpenTransactionModal} />
      <Dashboard />
-     <Modal 
+     <NewTransactionModal 
       isOpen={isNewTransactionModalOpen}
       onRequestClose={handleCloseTransactionModal}
-     >
-       <h2>Cadastrar transação</h2>
-     </Modal>
+     />
      <GlobalStyle />
     </>
   );
